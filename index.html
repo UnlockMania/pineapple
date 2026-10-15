@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pineapple'd</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #fff;
+  }
+  img {
+    width: 338px;
+    height: 612px;
+    object-fit: cover;
+  }
+  button {
+    padding: 12px 28px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    border: none;
+    background: #333;
+    color: #fff;
+    border-radius: 4px;
+  }
+  button:hover { background: #555; }
+</style>
+</head>
+<body>
+
+<h1>--- You've been pineapple'd ---</h1>
+<p>&nbsp;</p>
+<img src="pineapple.jpg" alt="Pineapple">
+<p>&nbsp;</p>
+
+<h2>How do I prevent this from happening in future?</h2>
+<p>To prevent this from happening in the future, you should always lock your computer when you leave it unattended. If you do not lock it, anyone can do anything as you on the computers and it always your responsibility that nobody does anything unexpected on your college account. It is your responsibility if someone did anything to your account when you leave the computer unattended.</p>
+<p>&nbsp;</p>
+
+<h2>How do I lock the computer?</h2>
+<p>To bring the computer back to the lockscreen and keeping everything open, use the keyboard shortcut: Win + L simultaneously. This password protects your account, ensuring nobody can do anything with your account when you leave your computer unattended. (Yes, everything you have remains open)</p>
+<p>&nbsp;</p>
+
+<p>Try it out.</p>
+<p>&nbsp;</p>
+
+<button id="closeBtn">Close</button>
+
+<script>
+  let fullscreenDone = false;
+
+  document.addEventListener('click', function () {
+    if (!fullscreenDone) {
+      fullscreenDone = true;
+      const el = document.documentElement;
+      if (el.requestFullscreen) el.requestFullscreen();
+      else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+      else if (el.msRequestFullscreen) el.msRequestFullscreen();
+    }
+  });
+
+  document.getElementById('closeBtn').addEventListener('click', function (e) {
+    e.stopPropagation();
+    if (document.exitFullscreen) document.exitFullscreen();
+    else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+    else if (document.msExitFullscreen) document.msExitFullscreen();
+    window.location.href = 'https://google.co.uk';
+  });
+</script>
+
+</body>
+</html>
